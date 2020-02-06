@@ -19,25 +19,55 @@
         <button onclick="home()" class="home"><i class="fa fa-home"></i></button>
         <h1 class="title1">Especialidades</h1>
         <div>
-            <a href="bifana.png" class="img1"><img src="bifana.png" width="25%" height="20%" class="galeria">
-            </a>
-            <a href="pizza.png" class="img2"><img src="pizza.png" width="25%" height="20%" class="galeria">
-            </a>
-            <a href="hamburguer.png" class="img3"><img src="hamburguer.png" width="25%" height="20%" class="galeria">
-            </a>
-            <a href="espetada.png" class="img4"><img src="espetada.png" width="25%" height="20%" class="galeria">
-            </a>
-            <a href="kebab.png" class="img5"><img src="kebab.png" width="25%" height="20%" class="galeria">
-            </a>
-            <a href="sumo.png" class="img6"><img src="sumo.png" width="25%" height="20%" class="galeria">
-            </a>
-            <a href="cachorro.png" class="img7"><img src="cachorro.png" width="25%" height="20%" class="galeria">
-            </a>
-            <a href="sandes.png" class="img8"><img src="sandes.png" width="25%" height="20%" class="galeria">
-            </a>
-            <a href="cafe1.png" class="img9"><img src="cafe1.png" width="25%" height="20%" class="galeria">
-            </a>
-        </div>
+            <div class="mySlides">
+                <div class="numbertext">1 / 9</div>
+                  <img src="bifana.png" style="width:25%">
+              </div>
+            
+              <div class="mySlides">
+                <div class="numbertext">2 / 9</div>
+                  <img src="cachorro.png" style="width:25%">
+              </div>
+            
+              <div class="mySlides">
+                <div class="numbertext">3 / 9</div>
+                  <img src="cafe1.png" style="width:25%">
+              </div>
+            
+              <div class="mySlides">
+                <div class="numbertext">4 / 9</div>
+                  <img src="espetada.png" style="width:25%">
+              </div>
+            
+              <div class="mySlides">
+                <div class="numbertext">5 / 9</div>
+                  <img src="hamburguer.png" style="width:25%">
+              </div>
+            
+              <div class="mySlides">
+                <div class="numbertext">6 / 9</div>
+                  <img src="kebab.png" style="width:25%">
+              </div>
+              <div class="mySlides">
+                  <div class="numbertext">7 / 9</div>
+                    <img src="pizza.png" style="width:25%">
+              </div>
+              <div class="mySlides">
+                  <div class="numbertext">8 / 9</div>
+                    <img src="sandes.png" style="width:25%">
+              </div>
+              <div class="mySlides">
+                  <div class="numbertext">9 / 9</div>
+                    <img src="sumo.png" style="width:25%">
+              </div>
+            
+              
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+              
+              
+              
+            </div>
         
         <div>   
             <h1 class="title2">Lista de Pedido</h1>
@@ -158,6 +188,32 @@
                     }
                 }
             }
+                var slideIndex = 1;
+                showSlides(slideIndex);
+
+                function plusSlides(n) {
+                    showSlides(slideIndex += n);
+                }
+
+
+                function currentSlide(n) {
+                    showSlides(slideIndex = n);
+                }
+
+                function showSlides(n) {
+                    var i;
+                    var slides = document.getElementsByClassName("mySlides");
+                    var dots = document.getElementsByClassName("demo");                    
+                    if (n > slides.length) {slideIndex = 1}
+                    if (n < 1) {slideIndex = slides.length}
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                    }
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
+                    slides[slideIndex-1].style.display = "block";                  
+                } 
             </script>
         </div>
     </div>
@@ -179,5 +235,5 @@
         <p> Domingos e feriados estamos fechados</p>
     </div>
     
-</footer>
+</footer>   
  </html>
